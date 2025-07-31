@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=gfazzino_hellowworld
+#SBATCH --job-name=gfazzino_helloworld
 #SBATCH --gres=gpu:1              # Request 1 GPU
 #SBATCH --cpus-per-task=4         # Number of CPU cores per task
 #SBATCH --mem=16G                 # Memory
