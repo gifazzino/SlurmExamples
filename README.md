@@ -1,3 +1,8 @@
+# Using Slurm
+Slurm: cluster management and job scheduling system for linux clusters .
+Here you will find basic examples, for more documentation visit the [User Guide](https://slurm.schedmd.com/quickstart.html)
+
+## Submitting jobs
 This directory contains two examples of projects with the corresponding slurm submission jobs:
 * `hello_world/`, a minimal C++ example printing (as you may guess) "hello world"
 * `metric_learning/`, where a dummy network is trained after activating a conda enviroment (using the [acorn framework](https://gitlab.cern.ch/gnn4itkteam/acorn))
@@ -18,3 +23,7 @@ For example, after submitting `hello_world_job.slurm`, the directory structure w
     ├── gfazzino_helloworld_26.err
     └── gfazzino_helloworld_26.out
 ```
+
+## Running interactively
+You also have the option to run your code interactively with slurm. To do so, start a bash session with the following command `srun --gres=gpu:1 --cpus-per-task=4 --mem=16G --time=01:00:00 --pty bash
+` (see the job submission examples for the meaning of the various flags).
