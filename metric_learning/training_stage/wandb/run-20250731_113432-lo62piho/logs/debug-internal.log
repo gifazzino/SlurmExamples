@@ -1,0 +1,16 @@
+{"time":"2025-07-31T11:34:32.03918227+02:00","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2025-07-31T11:34:32.03919521+02:00","level":"INFO","msg":"created symlink","path":"training_stage/wandb/run-20250731_113432-lo62piho/logs/debug-core.log"}
+{"time":"2025-07-31T11:34:32.153690028+02:00","level":"INFO","msg":"created new stream","id":"lo62piho"}
+{"time":"2025-07-31T11:34:32.153745739+02:00","level":"INFO","msg":"stream: started","id":"lo62piho"}
+{"time":"2025-07-31T11:34:32.153796658+02:00","level":"INFO","msg":"sender: started","stream_id":"lo62piho"}
+{"time":"2025-07-31T11:34:32.153796838+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"lo62piho"}
+{"time":"2025-07-31T11:34:32.153836228+02:00","level":"INFO","msg":"handler: started","stream_id":"lo62piho"}
+{"time":"2025-07-31T11:34:32.561460639+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-31T11:34:39.30454419+02:00","level":"INFO","msg":"stream: closing","id":"lo62piho"}
+{"time":"2025-07-31T11:34:39.30461179+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-31T11:34:39.305490758+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-31T11:34:39.909652234+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-31T11:34:40.127122292+02:00","level":"INFO","msg":"handler: closed","stream_id":"lo62piho"}
+{"time":"2025-07-31T11:34:40.127184832+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"lo62piho"}
+{"time":"2025-07-31T11:34:40.127199862+02:00","level":"INFO","msg":"sender: closed","stream_id":"lo62piho"}
+{"time":"2025-07-31T11:34:40.128282129+02:00","level":"INFO","msg":"stream: closed","id":"lo62piho"}

@@ -1,0 +1,16 @@
+{"time":"2025-07-31T11:43:34.04060625+02:00","level":"INFO","msg":"using version","core version":"0.19.0"}
+{"time":"2025-07-31T11:43:34.04061922+02:00","level":"INFO","msg":"created symlink","path":"training_stage/wandb/run-20250731_114334-mx31slfm/logs/debug-core.log"}
+{"time":"2025-07-31T11:43:34.153280906+02:00","level":"INFO","msg":"created new stream","id":"mx31slfm"}
+{"time":"2025-07-31T11:43:34.153330085+02:00","level":"INFO","msg":"stream: started","id":"mx31slfm"}
+{"time":"2025-07-31T11:43:34.153395005+02:00","level":"INFO","msg":"sender: started","stream_id":"mx31slfm"}
+{"time":"2025-07-31T11:43:34.153380925+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"mx31slfm"}
+{"time":"2025-07-31T11:43:34.153434385+02:00","level":"INFO","msg":"handler: started","stream_id":"mx31slfm"}
+{"time":"2025-07-31T11:43:34.796724225+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-31T11:43:41.80624+02:00","level":"INFO","msg":"stream: closing","id":"mx31slfm"}
+{"time":"2025-07-31T11:43:41.80630776+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-31T11:43:41.807073698+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-31T11:43:42.428473017+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-31T11:43:42.618772973+02:00","level":"INFO","msg":"handler: closed","stream_id":"mx31slfm"}
+{"time":"2025-07-31T11:43:42.618832613+02:00","level":"INFO","msg":"sender: closed","stream_id":"mx31slfm"}
+{"time":"2025-07-31T11:43:42.618818223+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"mx31slfm"}
+{"time":"2025-07-31T11:43:42.620024119+02:00","level":"INFO","msg":"stream: closed","id":"mx31slfm"}

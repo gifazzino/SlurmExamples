@@ -1,0 +1,108 @@
+/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python /local/anaconda3/envs/acorn_env/bin/acorn train metr ...
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA RTX A6000') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/2
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 2 processes
+----------------------------------------------------------------------------------------------------
+Loaded 80 training events, 10 validation events and 10 testing events
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/local/anaconda3/envs/acorn_env/bin/acorn", line 33, in <module>
+[rank0]:     sys.exit(load_entry_point('acorn', 'console_scripts', 'acorn')())
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+[rank0]:     return self.main(*args, **kwargs)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+[rank0]:     rv = self.invoke(ctx)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+[rank0]:     return _process_result(sub_ctx.command.invoke(sub_ctx))
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+[rank0]:     return ctx.invoke(self.callback, **ctx.params)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+[rank0]:     return __callback(*args, **kwargs)
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/core/entrypoint_stage.py", line 29, in train
+[rank0]:     train_stage.train(
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/core/train_stage.py", line 114, in train
+[rank0]:     lightning_train(
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/core/train_stage.py", line 150, in lightning_train
+[rank0]:     trainer.fit(stage_module, ckpt_path=checkpoint)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 538, in fit
+[rank0]:     call._call_and_handle_interrupt(
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 46, in _call_and_handle_interrupt
+[rank0]:     return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+[rank0]:     return function(*args, **kwargs)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 574, in _fit_impl
+[rank0]:     self._run(model, ckpt_path=ckpt_path)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 943, in _run
+[rank0]:     call._call_setup_hook(self)  # allow user to set up LightningModule in accelerator environment
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 104, in _call_setup_hook
+[rank0]:     _call_lightning_module_hook(trainer, "setup", stage=fn)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 167, in _call_lightning_module_hook
+[rank0]:     output = fn(*args, **kwargs)
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 77, in setup
+[rank0]:     self.test_data()
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 127, in test_data
+[rank0]:     run_data_tests(
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/utils/loading_utils.py", line 66, in run_data_tests
+[rank0]:     sample_event = dataset[0]
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/torch_geometric/data/dataset.py", line 291, in __getitem__
+[rank0]:     data = self.get(self.indices()[idx])
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 289, in get
+[rank0]:     graph = self.preprocess_graph(graph)
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 308, in preprocess_graph
+[rank0]:     self.scale_features(graph)
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 401, in scale_features
+[rank0]:     assert feature in get_pyg_data_keys(
+[rank0]: AssertionError: Feature hit_ phi not found in graph
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/local/anaconda3/envs/acorn_env/bin/acorn", line 33, in <module>
+[rank0]:     sys.exit(load_entry_point('acorn', 'console_scripts', 'acorn')())
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
+[rank0]:     return self.main(*args, **kwargs)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 1078, in main
+[rank0]:     rv = self.invoke(ctx)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
+[rank0]:     return _process_result(sub_ctx.command.invoke(sub_ctx))
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
+[rank0]:     return ctx.invoke(self.callback, **ctx.params)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
+[rank0]:     return __callback(*args, **kwargs)
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/core/entrypoint_stage.py", line 29, in train
+[rank0]:     train_stage.train(
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/core/train_stage.py", line 114, in train
+[rank0]:     lightning_train(
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/core/train_stage.py", line 150, in lightning_train
+[rank0]:     trainer.fit(stage_module, ckpt_path=checkpoint)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 538, in fit
+[rank0]:     call._call_and_handle_interrupt(
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 46, in _call_and_handle_interrupt
+[rank0]:     return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+[rank0]:     return function(*args, **kwargs)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 574, in _fit_impl
+[rank0]:     self._run(model, ckpt_path=ckpt_path)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 943, in _run
+[rank0]:     call._call_setup_hook(self)  # allow user to set up LightningModule in accelerator environment
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 104, in _call_setup_hook
+[rank0]:     _call_lightning_module_hook(trainer, "setup", stage=fn)
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 167, in _call_lightning_module_hook
+[rank0]:     output = fn(*args, **kwargs)
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 77, in setup
+[rank0]:     self.test_data()
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 127, in test_data
+[rank0]:     run_data_tests(
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/utils/loading_utils.py", line 66, in run_data_tests
+[rank0]:     sample_event = dataset[0]
+[rank0]:   File "/local/anaconda3/envs/acorn_env/lib/python3.10/site-packages/torch_geometric/data/dataset.py", line 291, in __getitem__
+[rank0]:     data = self.get(self.indices()[idx])
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 289, in get
+[rank0]:     graph = self.preprocess_graph(graph)
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 308, in preprocess_graph
+[rank0]:     self.scale_features(graph)
+[rank0]:   File "/misc/home/atlas/gfazzino/acorn/acorn/stages/graph_construction/graph_construction_stage.py", line 401, in scale_features
+[rank0]:     assert feature in get_pyg_data_keys(
+[rank0]: AssertionError: Feature hit_ phi not found in graph
