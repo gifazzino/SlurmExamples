@@ -1,6 +1,6 @@
 This directory contains two examples of projects with the corresponding slurm submission jobs:
 * `hello_world/`, a minimal C++ example printing (as you may guess) "hello world"
-* `metric_learning/`, where a dummy network is trained after activating a conda enviromenty
+* `metric_learning/`, where a dummy network is trained after activating a conda enviroment (using the [acorn framework](https://gitlab.cern.ch/gnn4itkteam/acorn))
 
 You may submit a job to the queue with the command `sbatch hello_world_job.slurm`
 
