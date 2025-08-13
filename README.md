@@ -11,6 +11,8 @@ You may submit a job to the queue with the command `sbatch hello_world_job.slurm
 
 After your job is submitted, you can monitor it with the command `squeue` (to view the whole queue), or `squeue -u $USER` (to view only your jobs)
 
+If the job uses multiple GPUs, it's important to call it with `srun`, see the example submit file at `metric_learning/submit_ml.slurm`
+
 With the submit files in these examples, the log and output files will be stored in the folder `logs`, created as you submit the job if it doesn't already exist. 
 For example, after submitting `hello_world_job.slurm`, the directory structure will look like this:
 ```
