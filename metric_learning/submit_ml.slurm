@@ -12,4 +12,4 @@ module load anaconda
 source activate acorn_env
 
 # Run your Python training script
-acorn train metric_learning_train.yaml
+srun acorn train metric_learning_train.yaml
