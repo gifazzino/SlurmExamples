@@ -1,4 +1,4 @@
-# Running a wandb sweep wit slurm
+# Running a wandb sweep with slurm
 Find [here](https://docs.wandb.ai/models/sweeps/sweep-config-keys) the documentation on sweep configurations options.
 
 To run it with slurm, we need a `sweep.yaml` file where we define the sweep. 
