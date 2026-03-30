@@ -1,0 +1,16 @@
+program: acorn
+command:
+  - ${program}
+  - train
+  - ./metric_learning_train.yaml
+
+project: <YOUR_PROJECT_NAME> # Used in wandb logging, will override what you set in the acorn yaml file
+method: grid # other options: random, bayes
+
+# This example trains different network architectures, changing number of hidden layers and of nodes per layer
+parameters:
+  emb_hidden:
+    values: [16, 24, 32, 48, 64, 128]
+
+  nb_layer:
+    values: [4, 6, 8, 10, 12, 16]

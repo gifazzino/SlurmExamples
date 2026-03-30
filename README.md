@@ -35,4 +35,4 @@ You can look up how resource usage of your job after it ran by running `sacct -j
 
 Please, note that TotalCPU is expressed in terms of time using CPU, not number of CPUs, thus 'Elapsed' should be taken into account when comparing this with AllocCPUs.
 
-For more documentation on sacct check out [the documentation](https://slurm.schedmd.com/sacct.html)
+For more info on `sacct` check out [the documentation](https://slurm.schedmd.com/sacct.html)
