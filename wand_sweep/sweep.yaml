@@ -2,6 +2,8 @@ program: acorn
 command:
   - ${program}
   - train
+  - --sweep
+  - "True"
   - ./metric_learning_train.yaml
 
 project: <YOUR_PROJECT_NAME> # Used in wandb logging, will override what you set in the acorn yaml file
