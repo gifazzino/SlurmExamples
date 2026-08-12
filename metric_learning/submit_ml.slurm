@@ -8,6 +8,8 @@
 #SBATCH --output=logs/%x_%j.out   # Stdout (job name and ID)
 #SBATCH --error=logs/%x_%j.err    # Stderr
 
+# apply ulimit
+ulimit -v $((29 * 1024 * 1024))
 # Load necessary modules or conda env
 source /local/anaconda3/bin/activate acorn_env
 
