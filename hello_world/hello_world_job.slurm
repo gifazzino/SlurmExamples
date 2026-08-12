@@ -7,6 +7,8 @@
 #SBATCH --output=logs/%x_%j.out   # Stdout (job name and ID)
 #SBATCH --error=logs/%x_%j.err    # Stderr
 
+# apply ulimit
+ulimit -v $((16 * 1024 * 1024))
 # Compile the C++ code
 g++ -o bin/hello_world hello_world.cxx
 
