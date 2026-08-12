@@ -6,7 +6,8 @@
 #SBATCH --mem=16G
 #SBATCH --output=logs/%x_%j.out
 #SBATCH --error=logs/%x_%j.err
-
+# apply ulimit
+ulimit -v $((15 * 1024 * 1024))
 source /local/anaconda3/bin/activate <YOUR_ACORN_ENVIRONMENT>
 
 wandb agent <YOUR_SWEEP_AGENT> # if optimization is done with random/bayes, you can add to this line (after agent) --count N to make it stop after N runs
