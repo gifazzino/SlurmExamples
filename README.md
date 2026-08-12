@@ -29,6 +29,7 @@ For example, after submitting `hello_world_job.slurm`, the directory structure w
 ## Running interactively
 You also have the option to run your code interactively with slurm. To do so, start a bash session with the following command `srun --gres=gpu:1 --cpus-per-task=4 --mem=16G --time=01:00:00 --pty bash
 ` (see the job submission examples for the meaning of the various flags).
+Before running any other command, you should set a memory limit for your bash session. To do so, run `ulimit -v $((15 * 1024 * 1024))` where the first number is (slightly less than) the memory you requested in GB.
 
 ## Memory accounting
 You can look up how resource usage of your job after it ran by running `sacct -j <JOB_ID> --format=JobID,JobName,AllocCPUS,ReqCPUS,TotalCPU,Elapsed,ReqMem,MaxRSS,State`. 
